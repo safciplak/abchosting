@@ -19,12 +19,13 @@
                         </tr>
                         </thead>
                         <tbody>
+
                         <?php foreach ($datas as $item) { ?>
                             <tr>
                                 <td class="col-sm-8 col-md-6">
                                     <div class="media">
                                         <a class="thumbnail pull-left" href="#"> <img class="media-object"
-                                                                                      src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png"
+                                                                                      src="<?php echo getImage($item['image']);?>"
                                                                                       style="width: 72px; height: 72px;">
                                         </a>
                                         <div class="media-body">
@@ -37,17 +38,17 @@
                                 </td>
                                 <td class="col-sm-1 col-md-1" style="text-align: center">
                                     <input type="email" class="form-control" id="exampleInputEmail1"
-                                           value="<?php echo $item['quantity']; ?>" disabled>
+                                           value="<?php echo $item['quantity']; ?>">
                                 </td>
                                 <td class="col-sm-1 col-md-1 text-center">
                                     <strong>$<?php echo getPrice($item['price']); ?></strong></td>
                                 <td class="col-sm-1 col-md-1 text-center">
                                     <strong>$<?php echo getPrice($item['quantity_price']); ?></strong></td>
-<!--                                <td class="col-sm-1 col-md-1">-->
-<!--                                    <button type="button" class="btn btn-danger">-->
-<!--                                        <span class="glyphicon glyphicon-remove"></span> Remove-->
-<!--                                    </button>-->
-<!--                                </td>-->
+                                <td class="col-sm-1 col-md-1">
+                                    <button type="button" class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-remove"></span> Remove
+                                    </button>
+                                </td>
                             </tr>
                         <?php } ?>
 

@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Routing system
+ */
 function extractControllerAndFunctionName()
 {
 	$requestUri = explode('/',$_SERVER['REQUEST_URI']);
@@ -33,13 +36,33 @@ function extractControllerAndFunctionName()
 	}
 }
 
+/**
+ * Get price with Number format
+ * @param $price
+ * @return string
+ */
 function getPrice($price)
 {
     return number_format($price, 2);
 }
 
+/**
+ * Die and dump
+ *
+ * @param $value
+ */
 function diedump($value)
 {
     echo '<pre>'; print_r($value); die;
 }
 
+
+/**
+ * Get Image from path
+ *
+ * @param $path
+ * @return string
+ */
+function getImage($path){
+    return '/images/' . $path;
+}

@@ -19,11 +19,11 @@ class BaseModel
     }
 
     /**
-     * Select
+     * Select query
      *
      * @param null $tableName
      * @param null $secondTable
-     * * @param null $where
+     * @param null $where
      * @param null $whereField
      * @param null $table1Field
      * @param null $table2Field
@@ -54,6 +54,13 @@ class BaseModel
         }
     }
 
+    /**
+     * Update Query for user balance
+     *
+     * @param null $tableName
+     * @param null $data
+     * @return array
+     */
     public function update($tableName = null, $data = null)
     {
         $query = "UPDATE $tableName SET balance=balance-$data,charge_balance = $data WHERE id = 1";
@@ -66,6 +73,11 @@ class BaseModel
         }
     }
 
+    /**
+     * Get product ratings
+     *
+     * @return array
+     */
     public function getRatings()
     {
         $query = "SELECT product_id, sum(rating) / count(product_id) AS rate FROM product_ratings GROUP BY product_id";
@@ -80,6 +92,12 @@ class BaseModel
 
     }
 
+    /**
+     * Get cart items
+     * @param null $tableName
+     * @param null $productIds
+     * @return array
+     */
     public function getCartItems($tableName = null, $productIds = null)
     {
         $productIds = implode(",", $productIds);
@@ -95,7 +113,7 @@ class BaseModel
     }
 
     /**
-     * Insert
+     * Insert proces
      *
      * @param string $tableName
      * @param array $fields
@@ -117,5 +135,13 @@ class BaseModel
             $last_id = $this->db->lastInsertId();
             print "insert successfully!";
         }
+    }
+
+
+    public function getUserBalance()
+    {
+        $user = $this->get('users');
+        $userBalance = reset($user)['balance'];
+        $_SESSION['userBalance'] = $userBalance;
     }
 }

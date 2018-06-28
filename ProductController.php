@@ -13,6 +13,9 @@ class ProductController extends BaseController
         $this->product = new Product();
     }
 
+    /**
+     * Get products with ratings
+     */
     public function index()
     {
         $item = $this->product->get('products', 'product_ratings', null, null, 'id', 'product_id');
@@ -27,14 +30,16 @@ class ProductController extends BaseController
                     }
                 }
             }
-
         }
 
-//        diedump($item);
+        $this->product->getUserBalance();
 
         $this->getView('product', $item);
     }
 
+    /**
+     * Rate a product
+     */
     public function rate()
     {
         $productId = $_GET['productId'];

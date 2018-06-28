@@ -5,7 +5,7 @@
                 <?php foreach ($datas as $data) { ?>
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-
+                            <a href="#"><img class="card-img-top" src="<?php echo '/images/'.$data['image'] ;?>" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#"><?php echo $data['name']; ?></a>
@@ -29,7 +29,7 @@
 
                             <div class="card-footer">
                                 <small class="text-muted">
-                                    <?php $data['rate'] = isset($data['rate']) ? $data['rate']:  0; ?>
+                                    <?php $data['rate'] = isset($data['rate']) ? $data['rate'] : 0; ?>
                                     <?php if ($data['rate'] != 0) { ?>
                                         <?php for ($i = 1; $i <= ceil($data['rate']); $i++) { ?>
                                             &#9733;

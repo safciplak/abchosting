@@ -17,6 +17,11 @@
                     <a class="nav-link" href="<?php echo $this->getWithBasePath('/cart/index'); ?>">Cart(<span
                             id="cartItemCount"><?php echo isset($_SESSION['productId']) ? count($_SESSION['productId']) : 0; ?></span>)</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $this->getWithBasePath('/cart/index'); ?>">User Balance(<span
+                                id="">$<?php echo $_SESSION['userBalance']; ?></span>)</a>
+                </li>
             </ul>
         </div>
     </div>
