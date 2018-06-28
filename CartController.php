@@ -57,6 +57,16 @@ class CartController extends BaseController
         echo json_encode($_SESSION);
     }
 
+    public function removeCartItem()
+    {
+        $productId = $_GET['productId'];
+
+        $cartItems = $_SESSION['productId'];
+
+        unset($cartItems[$productId]);
+        $_SESSION['productId'] = $cartItems;
+    }
+
     /**
      * Add Cargo price to total price
      */

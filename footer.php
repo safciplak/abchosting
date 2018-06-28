@@ -314,6 +314,19 @@
 
     });
 </script>
+<script>
+    $('.remove-cart-item').click(function(){
+      var productId = $(this).data('id');
+      var url = $(this).data('url') + '?productId='+productId;
+
+      $.ajax({
+        url: url, success: function (result)
+        {
+          window.location.reload();
+        }
+      });
+    });
+</script>
 </body>
 
 </html>

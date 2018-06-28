@@ -45,7 +45,7 @@
                                 <td class="col-sm-1 col-md-1 text-center">
                                     <strong>$<?php echo getPrice($item['quantity_price']); ?></strong></td>
                                 <td class="col-sm-1 col-md-1">
-                                    <button type="button" class="btn btn-danger">
+                                    <button type="button" class="btn btn-danger remove-cart-item" data-id="<?php echo $item['id']; ?>" data-url="<?php echo $this->getWithBasePath('/cart/removeCartItem'); ?>">
                                         <span class="glyphicon glyphicon-remove"></span> Remove
                                     </button>
                                 </td>
