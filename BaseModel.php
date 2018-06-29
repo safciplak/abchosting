@@ -133,7 +133,7 @@ class BaseModel
         if ($insert)
         {
             $last_id = $this->db->lastInsertId();
-            print "insert successfully!";
+//            print "insert successfully!";
         }
     }
 

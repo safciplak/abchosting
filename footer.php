@@ -299,16 +299,17 @@
       var productId = $(this).data('id');
       $('.starrr'+productId).attr('data-rate', $('.starrrcount'+productId).text());
 
+
       var rate = $('.starrrcount'+productId).text();
 
       var url = $(this).data("url") + '?productId='+productId+'&rate=' + rate;
       $.ajax({
         url: url, success: function (result)
         {
-          // var result = JSON.parse(result);
-          // $('#cargoPrice').text(parseFloat(result.cargoPrice).toFixed(2));
-          // $('#total').text(result.total);
-          // $('#totalHidden').val(result.total);
+          var result = JSON.parse(result);
+          if(result.error == 1){
+            alert('only can rate once')
+          }
         }
       });
 
@@ -318,6 +319,19 @@
     $('.remove-cart-item').click(function(){
       var productId = $(this).data('id');
       var url = $(this).data('url') + '?productId='+productId;
+
+      $.ajax({
+        url: url, success: function (result)
+        {
+          window.location.reload();
+        }
+      });
+    });
+
+    $('.quantity').blur(function(){
+      var productId = $(this).data('id');
+      var quantity = $(this).val();
+      var url = $(this).data('url') + '?productId='+productId +'&quantity='+quantity;
 
       $.ajax({
         url: url, success: function (result)

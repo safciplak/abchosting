@@ -37,7 +37,7 @@
                                     </div>
                                 </td>
                                 <td class="col-sm-1 col-md-1" style="text-align: center">
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                    <input type="email" class="form-control quantity" data-id="<?php echo $item['id']; ?>" data-url="<?php echo $this->getWithBasePath('/cart/updateCartItem'); ?>"
                                            value="<?php echo $item['quantity']; ?>">
                                 </td>
                                 <td class="col-sm-1 col-md-1 text-center">

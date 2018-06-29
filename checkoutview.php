@@ -337,7 +337,7 @@
         <div class="summary-content">
             <div class="summary-head"><h5 class="summary-title">Remaining User Balance</h5></div>
             <div class="summary-price">
-                <p class="summary-text">$<?php echo $_SESSION['userBalance']; ?></p>
+                <p class="summary-text">$<?php echo $userBalance ? getPrice($userBalance) : getPrice($_SESSION['userBalance']); ?></p>
             </div>
         </div>
     </div>

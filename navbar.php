@@ -20,7 +20,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $this->getWithBasePath('/cart/index'); ?>">User Balance(<span
-                                id="">$<?php echo $_SESSION['userBalance']; ?></span>)</a>
+                                id="">$<?php echo getPrice($_SESSION['userBalance']); ?></span>)</a>
                 </li>
             </ul>
         </div>

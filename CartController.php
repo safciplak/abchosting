@@ -35,6 +35,7 @@ class CartController extends BaseController
         $_SESSION['items'] = $items;
         $_SESSION['subTotal'] = $subTotal;
 
+
         $cart->getUserBalance();
 
         $this->getView('cart', $items);
@@ -53,10 +54,16 @@ class CartController extends BaseController
             $_SESSION['productId'][$productId] = $quantity;
         }
 
+        if(array_key_exists($productId, $_SESSION['productId'])){
 
-        echo json_encode($_SESSION);
+        }
+
+        echo json_encode($_SESSION['productId']);
     }
 
+    /**
+     * Remove Cart Item
+     */
     public function removeCartItem()
     {
         $productId = $_GET['productId'];
@@ -65,6 +72,16 @@ class CartController extends BaseController
 
         unset($cartItems[$productId]);
         $_SESSION['productId'] = $cartItems;
+    }
+
+    /**
+     * Update Cart Item
+     */
+    public function updateCartItem()
+    {
+        $productId = $_GET['productId'];
+        $quantity = $_GET['quantity'];
+        $_SESSION['productId'][$productId] = $quantity;
     }
 
     /**
@@ -99,12 +116,12 @@ class CartController extends BaseController
             foreach($users as $user){
                 $userBalance = $user['balance'];
             }
+            $_SESSION['userBalance'] = $userBalance;
         } else {
             $error = 1;
         }
 
-
-
+        $_SESSION['productId'] = null;
 
         include "checkoutview.php";
     }
