@@ -51,7 +51,7 @@ class ProductController extends BaseController
         if($itemCount && count($itemCount) == 1){
             echo json_encode(['error' => 1]);
         } else {
-            $this->product->insert('product_ratings', ['product_id', 'rating', 'user_id'], [$productId, $rate, 1]);
+            $this->product->insert('product_ratings', ['product_id', 'rating', 'user_id'], [$productId, $rate, $_SESSION['userId']]);
         }
     }
 }

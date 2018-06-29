@@ -13,8 +13,11 @@ function extractControllerAndFunctionName()
 		{
 			if($key == 1)
 			{
+
                 include "BaseController.php";
                 include "BaseModel.php";
+
+
 				$name = ucfirst($item);
 				$modelName = $name;
 				include "$modelName.php";

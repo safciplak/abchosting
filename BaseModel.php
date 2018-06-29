@@ -112,12 +112,14 @@ class BaseModel
         }
     }
 
+
     /**
      * Insert proces
      *
-     * @param string $tableName
-     * @param array $fields
-     * @param array $values
+     * @param null $tableName
+     * @param null $fields
+     * @param null $values
+     * @return integer
      */
     public function insert($tableName = null, $fields = null, $values = null)
     {
@@ -134,6 +136,7 @@ class BaseModel
         {
             $last_id = $this->db->lastInsertId();
 //            print "insert successfully!";
+            return $last_id;
         }
     }
 
@@ -141,6 +144,7 @@ class BaseModel
     public function getUserBalance()
     {
         $user = $this->get('users');
+
         $userBalance = reset($user)['balance'];
         $_SESSION['userBalance'] = $userBalance;
     }

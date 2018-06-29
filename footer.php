@@ -340,6 +340,16 @@
         }
       });
     });
+
+    if(localStorage.getItem('first-item') != 1){
+      localStorage.setItem('first-item', 1);
+      $.ajax({
+        url: "/user/create", success: function (result)
+        {
+
+        }
+      });
+    }
 </script>
 </body>
 
