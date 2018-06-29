@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f47e9f9-fbd0-4e07-aa25-722d54f15d8d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e2bbbce8-e9f3-4d46-b5bd-e027f569a66f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e2bbbce8-e9f3-4d46-b5bd-e027f569a66f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaseModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/BaseModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cartview.php" beforeDir="false" afterPath="$PROJECT_DIR$/cartview.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkoutview.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkoutview.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/navbar.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -127,8 +118,8 @@
       <file leaf-file-name="footer.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="309" column="28" selection-start-line="309" selection-start-column="28" selection-end-line="309" selection-end-column="28" />
+            <state relative-caret-position="222">
+              <caret line="310" column="32" selection-start-line="310" selection-start-column="32" selection-end-line="310" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -286,7 +277,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="database.console.LAST_STATE" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -329,16 +320,15 @@
       <workItem from="1529851024048" duration="6738000" />
       <workItem from="1529944319040" duration="10673000" />
       <workItem from="1530097371533" duration="650000" />
-      <workItem from="1530209906215" duration="5828000" />
+      <workItem from="1530209906215" duration="6301000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43438000" />
+    <option name="totallyTimeSpent" value="43911000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" />
@@ -346,9 +336,9 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32972974" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.33140376" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.33140376" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32875606" />
-      <window_info active="true" anchor="bottom" id="Database Console" order="7" visible="true" weight="0.32706222" />
+      <window_info anchor="bottom" id="Database Console" order="7" weight="0.32706222" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49789914" weight="0.39095315" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.32875606" />
@@ -651,8 +641,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="309" column="28" selection-start-line="309" selection-start-column="28" selection-end-line="309" selection-end-column="28" />
+        <state relative-caret-position="222">
+          <caret line="310" column="32" selection-start-line="310" selection-start-column="32" selection-end-line="310" selection-end-column="32" />
         </state>
       </provider>
     </entry>

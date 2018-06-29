@@ -26,8 +26,9 @@ CREATE TABLE `product_ratings` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
   `rating` float NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +37,7 @@ CREATE TABLE `product_ratings` (
 
 LOCK TABLES `product_ratings` WRITE;
 /*!40000 ALTER TABLE `product_ratings` DISABLE KEYS */;
-INSERT INTO `product_ratings` VALUES (59,1,5),(60,2,2),(61,3,3),(62,4,4),(63,2,5),(64,2,1),(65,2,1),(66,2,1),(67,3,5),(68,3,5),(69,1,5),(70,2,1),(71,2,2),(72,2,3),(73,2,4),(74,2,5),(75,2,1),(76,2,2),(77,3,1),(78,3,4),(79,3,5);
+INSERT INTO `product_ratings` VALUES (53,2,5,1),(54,3,5,1);
 /*!40000 ALTER TABLE `product_ratings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -51,6 +52,7 @@ CREATE TABLE `products` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   `price` float NOT NULL,
+  `image` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -61,7 +63,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'apple',0.3),(2,'beer',2),(3,'water',1),(4,'cheese',3.74);
+INSERT INTO `products` VALUES (1,'apple',0.3,'apple.png'),(2,'beer',2,'beer.jpeg'),(3,'water',1,'water.jpg'),(4,'cheese',3.74,'cheese.jpg');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,7 +89,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'abchosting',100,17.24);
+INSERT INTO `users` VALUES (1,'abchosting',37.9,2);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -100,4 +102,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-27 13:16:33
+-- Dump completed on 2018-06-29 10:04:29
