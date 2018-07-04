@@ -111,7 +111,7 @@ class CartController extends BaseController
 
             $cart->update('users', $total);
 
-            $users = $cart->get('users', null, 'id', 1);
+            $users = $cart->get('users', null, 'id', $_SESSION['userId']);
 
             foreach($users as $user){
                 $userBalance = $user['balance'];

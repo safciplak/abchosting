@@ -25,11 +25,11 @@ class BaseModel
      * @param null $secondTable
      * @param null $where
      * @param null $whereField
-     * @param null $table1Field
-     * @param null $table2Field
+     * @param null $where2
+     * @param null $whereField2
      * @return bool|PDOStatement|string
      */
-    public function get($tableName = null, $secondTable = null, $where = null, $whereField = null, $table1Field = null, $table2Field = null)
+    public function get($tableName = null, $secondTable = null, $where = null, $whereField = null, $where2 = null, $whereField2 = null)
     {
         $query = "SELECT * FROM $tableName";
 
@@ -38,8 +38,10 @@ class BaseModel
             $query .= " WHERE $where = $whereField";
         }
 
-        if ($secondTable)
-        {
+        if ($where2){
+
+            $query .= " AND $where2 = $whereField2";
+
 //            $query .= " LEFT JOIN $secondTable ON ($tableName.$table1Field=$secondTable.$table2Field)";
 //            $query .= " GROUP BY $secondTable.product_id";
 //            $query .= " GROUP BY $tableName.$table1Field";
@@ -63,7 +65,8 @@ class BaseModel
      */
     public function update($tableName = null, $data = null)
     {
-        $query = "UPDATE $tableName SET balance=balance-$data,charge_balance = $data WHERE id = 1";
+        $query = "UPDATE $tableName SET balance=balance-$data,charge_balance = $data WHERE id = ". $_SESSION['userId'];
+
         $query = $this->db->prepare($query);
         $query->execute();
 
@@ -143,8 +146,7 @@ class BaseModel
 
     public function getUserBalance()
     {
-        $user = $this->get('users');
-
+        $user = $this->get('users', null, 'id', $_SESSION['userId']);
         $userBalance = reset($user)['balance'];
         $_SESSION['userBalance'] = $userBalance;
     }

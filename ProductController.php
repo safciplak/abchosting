@@ -18,7 +18,7 @@ class ProductController extends BaseController
      */
     public function index()
     {
-        $item = $this->product->get('products', 'product_ratings', null, null, 'id', 'product_id');
+        $item = $this->product->get('products');
 
         $ratings = $this->product->getRatings();
 
@@ -44,14 +44,15 @@ class ProductController extends BaseController
     {
 
         $productId = $_GET['productId'];
+        $userId = $_SESSION['userId'];
         $rate = $_GET['rate'];
 
-        $itemCount = $this->product->get('product_ratings', null, 'product_id', $productId);
+        $exist = $this->product->get('product_ratings', null, 'product_id', $productId, 'user_id', $userId);
 
-        if($itemCount && count($itemCount) == 1){
+        if($exist){
             echo json_encode(['error' => 1]);
         } else {
-            $this->product->insert('product_ratings', ['product_id', 'rating', 'user_id'], [$productId, $rate, $_SESSION['userId']]);
+            $this->product->insert('product_ratings', ['product_id', 'rating', 'user_id'], [$productId, $rate, $userId]);
         }
     }
 }
